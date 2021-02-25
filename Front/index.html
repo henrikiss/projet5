@@ -5,17 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oricono</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar target">
-        <a href="#" class="navbar-link">
+        <a href="#Accueil" class="navbar-link">
             <i class="fas fa-home"></i>
             <span>Accueil</span>
         </a>
-        <a href="#" class="navbar-link">
+        <a href="#Galeries" class="navbar-link">
             <i class="fas fa-store"></i>
             <span>Galeries</span>
         </a>
@@ -23,33 +24,37 @@
             <i class="fas fa-blog"></i>
             <span>Blog</span>
         </a>
-        <a href="#" class="navbar-link">
+        <a href="#Contact" class="navbar-link">
             <i class="fas fa-blender-phone"></i>
             <span>Contact</span>
         </a>
-        <a href="#" class="navbar-link">
+        <a href="/Front/pages/panier.html" class="navbar-link">
             <i class="fas fa-shopping-cart"></i>
             <span>Panier</span>
         </a>
     </nav>
     <div class="menu target"></div>
     <!-- End of Navbar -->
-    <div class="container">
+    <div class="container" id="Accueil">
         <!-- Section 1 -->
         <section class="section-1">
             <h1 class="section-heading">Bienvenue chez Oricono</h1>
             <div class="section-1-icons">
-                <i class="change fas fa-egg"></i>
-                <i class="fas fa-flushed"></i>
-                <i class="fas fa-air-freshener"></i>
+                <i class="change fas fa-flushed"></i>
+                <i class="fas fa-bread-loaf"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-gingerbread-man"></i>
+                <i class="fas fa-gift"></i>  
+                <i class="fas fa-coffee"></i> 
+                <i class="fas fa-diamond"></i> 
             </div>
         </section>
         <!-- End Section 1 -->
         <!-- Section 2 -->
-        <section class="section-2">
+        <section class="section-2" id="Galeries">
             <h1 class="section-heading">Galeries</h1>
             <div class="gallery">
-                <!-- <a href="#" class="gallery-link" title="Ajouter">
+                <!-- <a href="http://localhost:5500/Front/pages/produit.html?id=12452523" class="gallery-link" title="Ajouter">
                     <img src="images/teddy_1.jpg" class="teddy-img">
                     <h3 class="teddy-name">Teddy 1</h3>
                     <p class="teddy-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque tempore, maiores ipsum eos dignissimos in minus excepturi. At dolorum animi molestiae ab ad, assumenda laborum iusto excepturi eum modi laboriosam?</p>
@@ -78,7 +83,7 @@
         </section>
         <!-- End Section 2 -->
         <!-- Section 3 -->
-        <section class="section-3">
+        <section class="section-3" id="Contact">
             <div class="section-3-text">
                 <h2 class="section-3-heading">Inscrivez-vous</h2>
                 <p class="section-3-paragraph">Soyez les premiers à être informé des nouveautés.</p>
@@ -95,6 +100,7 @@
         </section>
         <!-- End of Section 3 -->
     </div>
-    <script src="./js/script.js"></script>
+    <script src="./js/index.js">
+    </script>
 </body>
 </html>

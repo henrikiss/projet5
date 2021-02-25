@@ -1,12 +1,12 @@
 
-// Action menu
+// Action click sur menu
 document.querySelector('.menu').addEventListener('click', () => {
     document.querySelectorAll('.target').forEach((item) =>{
         item.classList.toggle('change')
     })
 })
 
-// Animation icons accueil
+// Animation icons section accueil
 const icons = document.querySelectorAll('.section-1-icons i')
 let i = 1
 
@@ -24,26 +24,25 @@ setInterval(() => {
 }, 4000)
 
 
-// Récupération de la balise parent (DIV Gallery)
+// Récupération de la balise parent (section Gallery)
 const application = document.querySelector('.gallery')
 
 // Appel API
-var request = new XMLHttpRequest()
+let request = new XMLHttpRequest()
 request.open('GET', 'http://localhost:3000/api/teddies')
 
 request.onload = function () {
 
-    //reception et traitement du JSON réponse
-    var data = JSON.parse(this.response)
-
     if(request.status >= 200 && request.status < 400) {
+         //reception et traitement du JSON réponse
+        let data = JSON.parse(this.response)
         data.forEach((teddy) => {
             //balise <a>
+            let url='http://localhost:5500/Front/pages/produit.html?id='+teddy._id
             const gallerylink = document.createElement('a')
             gallerylink.setAttribute('class', 'gallery-link')
             gallerylink.setAttribute('title', 'ajouter')
-            gallerylink.setAttribute('href', '#')
-
+            gallerylink.setAttribute('href', url)
             //balise <img>
             const image = document.createElement('img')
             image.setAttribute('class', 'teddy-img')

@@ -15,115 +15,124 @@ html {
     font-size: 50%;
 }
 .section-heading {
-    font-size: 12rem;
-    font-weight: 600;
-    color:#000;
-    text-align:center;
-    text-transform: capitalize;
-    letter-spacing: 0.5rem;
-    text-shadow: 0.3rem 0.3rem 0.3rem rgb(122, 120, 120);
+  font-size: 12rem;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 0.5rem;
+  text-shadow: 0.3rem 0.3rem 0.3rem #000;
 }
 /*End of Default style*/
 
 /* Navbar */
 .navbar {
-    width: 100%;
-    height: 14rem;
-    background-color: #000;
-    position: fixed;
-    top:-14rem;
-    z-index:100;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0.2rem 0.2rem 0.2rem #000;
-    transition: top 0.4s;
+  width: 100%;
+  height: 14rem;
+  background-color: #000;
+  position: fixed;
+  top: -14rem;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0.2rem 0.2rem 0.2rem #000;
+  transition: top 0.4s;
 }
 
 .navbar.change {
-    top:0;
-    transition: top 0.4s 0.2s;
+  top: 0;
+  transition: top 0.4s 0.2s;
 }
 
 .navbar-link {
-    color: #aaa;
-    margin: 0.4rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: color 0.3s, opacity 0.2s;
+  color: #aaa;
+  margin: 0 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: color 0.3s, opacity 0.2s;
 }
 
 .change .navbar-link {
-    opacity: 1;
+  opacity: 1;
 }
 
 .change .navbar-link:nth-child(1) {
-    transition: opacity 0.4s 0.5s, color 0.3s
+  transition: opacity 0.4s 0.5s, color 0.3s;
 }
 
 .change .navbar-link:nth-child(2) {
-    transition: opacity 0.4s 0.6s, color 0.3s
+  transition: opacity 0.4s 0.6s, color 0.3s;
 }
 
 .change .navbar-link:nth-child(3) {
-    transition: opacity 0.4s 0.7s, color 0.3s
+  transition: opacity 0.4s 0.7s, color 0.3s;
+}
+
+.change .navbar-link:nth-child(4) {
+  transition: opacity 0.4s 0.8s, color 0.3s;
+}
+
+.change .navbar-link:nth-child(5) {
+  transition: opacity 0.4s 0.9s, color 0.3s;
 }
 
 .navbar-link:hover {
-    color: #fff;
+  color: #fff;
 }
 
 .navbar-link i {
-    font-size: 7rem;
+  font-size: 7rem;
 }
 
 .navbar-link span {
-    font-size: 2.5rem;
-    font-weight: 900;
-    letter-spacing: 0.5rem;
-    margin-top: 0.5rem;
-  }
-  
-  .menu {
-    width: 4rem;
-    height: 6rem;
-    background-color: #000;
-    position: fixed;
-    top: 1rem;
-    left: 5rem;
-    border-radius: 30rem 30rem 15rem 15rem;
-    box-shadow: 0.1rem 0.1rem 0.1rem #000, -0.1rem -0.1rem 0.1rem #000;
-    cursor: pointer;
-    z-index: 100;
-    transition: top 0.4s 0.2s;
-  }
-  
-  .menu.change {
-    top: 15rem;
-    transition: top 0.4s;
-  }
-  
-  .menu::before {
-    content: "";
-    width: 0.3rem;
-    height: 15rem;
-    background-color: #000;
-    position: absolute;
-    top: -15rem;
-    left: calc(50% - 0.15rem);
-    box-shadow: 0.1rem 0 0.1rem #000;
-  }
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 0.5rem;
+  margin-top: 0.5rem;
+}
 
+.menu {
+  width: 4rem;
+  height: 6rem;
+  background-color: #000;
+  position: fixed;
+  top: 1rem;
+  left: 5rem;
+  border-radius: 30rem 30rem 15rem 15rem;
+  box-shadow: 0.1rem 0.1rem 0.1rem #000, -0.1rem -0.1rem 0.1rem #000;
+  cursor: pointer;
+  z-index: 100;
+  transition: top 0.4s 0.2s;
+}
+
+.menu.change {
+  top: 15rem;
+  transition: top 0.4s;
+}
+
+.menu::before {
+  content: "";
+  width: 0.3rem;
+  height: 15rem;
+  background-color: #000;
+  position: absolute;
+  top: -15rem;
+  left: calc(50% - 0.15rem);
+  box-shadow: 0.1rem 0 0.1rem #000;
+}
 /* End of Navbar */
+
+/* DEBUT PAGE INDEX*/
 
 /* Section 1 */
 .section-1 {
     width: 100%;
     height: 100vh;
-    background-color: rgb(214, 209, 209);
+    background-color: rgb(78, 140, 182);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -132,7 +141,7 @@ html {
   
   .section-1-icons i {
     font-size: 35rem;
-    color: #a79a2d;
+    color: #09598f;
     position: absolute;
     transform: translate(-50%, -50%) scale(0);
     text-shadow: 0.2rem 0.2rem 0.2rem #000;
@@ -270,14 +279,16 @@ html {
 }
 
 .section-3-heading {
-    font-size: 4rem;
-    font-weight: 600;
+    font-size: 3rem;
+    font-weight: 500;
     color:darkgoldenrod;
+    overflow-wrap: break-word;
 }
 
 .section-3-paragraph {
     font-size: 1.5rem;
     color: #888;
+    overflow-wrap: break-word;
 }
 
 .signup-form {
@@ -322,6 +333,28 @@ html {
     padding-top: 6rem;
     width: 100%;
     text-align: center;
+  }
+
+.addCart {
+    font-size: 2rem;
+    padding: 0.8rem 4rem;
+    color: #fff;
+    border-radius: 3rem;
+  }
+
+  .taille{
+    font-size: 2rem;
+  }
+  
+  .price{
+    font-size: 2rem;
+    color: #ff7c9c;
+    font-weight: bold;
+   
+  }
+  
+  .w-20{
+    width: 20%!important;
   }
 
 /* End of Section  3 */
@@ -391,6 +424,12 @@ html {
       font-size: 7rem;
       margin: 0 10rem;
     }
+
+    .section-3-heading {
+      font-size: 2rem;
+      font-weight: 300;
+      color: darkgoldenrod;
+  }
   
     .section-1-icons i {
       font-size: 20rem;
@@ -422,3 +461,6 @@ html {
     }
   }
 /* End of responsive */
+
+/* FIN PAGE INDEX*/
+
