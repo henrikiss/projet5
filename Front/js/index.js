@@ -1,4 +1,14 @@
-
+function onPageLoad(){
+    let productNumbers = localStorage.getItem('cartNumbers');
+    console.log("My Cart1: "+ productNumbers);
+    if(productNumbers){
+        document.querySelector('.cart').textContent = productNumbers;
+        
+    } else{
+        document.querySelector('.cart').textContent = 0;
+       
+    }
+}
 // Action click sur menu
 document.querySelector('.menu').addEventListener('click', () => {
     document.querySelectorAll('.target').forEach((item) =>{
@@ -74,4 +84,9 @@ request.onload = function () {
         application.appendChild(errorMessage)
     }
 }
-request.send()
+request.send();
+
+
+
+// Appel de la fonction
+onPageLoad();
