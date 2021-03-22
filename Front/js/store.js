@@ -59,12 +59,12 @@ fetchTeddies().then(teddies => {
     if(teddies && teddies.length > 0){
         productContainer.innerHTML = '';
         Object.values(teddies).map(teddy => {
-            let url='http://127.0.0.1:5500/pages/produit-detail.html?id='+teddy._id
+            
             productContainer.innerHTML += `
             <div class="shop-item m-2 d-flex justify-content-center align-items-center">
                 <span class="shop-item-id" hidden>${teddy._id}</span>
                 <span class="shop-item-title">${teddy.name}</span>
-                <img class="shop-item-image" src="${teddy.imageUrl}" id="teddyImage" href="${url}">
+                <img class="shop-item-image" src="${teddy.imageUrl}" data-id="${teddy._id}" onclick="gotoDetailPage(event)">
                 <div class="shop-item-details">
                     <span class="shop-item-price">${teddy.price}€</span>
                     <button class="btn btn-primary shop-item-button" type="button" onclick="ready()">Ajouter au panier</button>
@@ -110,13 +110,21 @@ function addToCartClicked(event) {
     let price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
     let imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
     product = {
+        color:'inconnue',
         _id: id,
-        title: title,
+        name: title,
         price: price,
         imageUrl: imageSrc,
         quantite: 1
     }
     cartNumbers(product);
+}
+
+function gotoDetailPage(event){
+    let buttonClicked = event.target;
+    const productId = buttonClicked.dataset.id;
+    let url='http://127.0.0.1:5500/Front/pages/product.html?id='+productId;
+    location.href=url;
 }
 
 

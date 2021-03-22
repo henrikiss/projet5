@@ -51,6 +51,7 @@ function loadCartItems() {
 
     let products = localStorage.getItem('productsInCart');
     products = JSON.parse(products);
+    
 
     let cartItems = document.getElementsByClassName('cart-items')[0]
     cartItems.innerHTML = ''
@@ -59,7 +60,7 @@ function loadCartItems() {
         <div class="cart-row">
             <div class="cart-item cart-column">
                 <img class="cart-item-image" src="${item.imageUrl}" width="100" height="100">
-                <span class="cart-item-title">${item.title}</span>
+                <span class="cart-item-title">${item.name}</span>
             </div>
             <span class="cart-price cart-column">${item.price}</span>
             <div class="cart-quantity cart-column">
@@ -144,4 +145,6 @@ function updateCart(productId){
         localStorage.setItem('totalCartCost', totalCost);
         localStorage.setItem('productsInCart', JSON.stringify(products));
     }
+
 }
+
