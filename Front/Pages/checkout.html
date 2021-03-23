@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oricono | Paiement</title>
+    <link rel="stylesheet" href="/Front/css/styles.css" />
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="/Front/css/bootstrap.min.css">
+    <script src="/Front/js/checkout.js" async></script>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav main-nav">
+            <ul class="menu-items">
+                <li><a href="../Front/index.html">Accueil</a></li>
+                <li><a href="/Front/Pages/store.html">Boutique</a></li>
+                <li>
+                    <a href="/Front/Pages/cart.html">
+                        <i data-count="0" class="fa fa-shopping-cart badge"> </i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <h1 class="band-name band-name-large">Paiement</h1>
+    </header>
+    <div class="col-md-4 container bg-default">
+			
+        <h4 class="my-4">
+                Adresse 
+        </h4>
+        
+        <form>
+            <div class="form-row">
+                <div class="col-md-6 form-group">
+                    <label for="firstname">Prénom</label>
+                    <input type="text" class="form-control" id="firstname" placeholder="First Name">
+                    <div class="invalid-feedback">
+                        Un prénom valide est requis.
+                    </div>
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <label for="lastname">Nom de famille</label>
+                    <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+                    <div class="invalid-feedback">
+                        Un nom de famille valide est requis.
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="username">Nom utilisateur</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">@</span>
+                        </div>	
+                        <input type="text" class="form-control" id="username" placeholder="Username" required>
+                        <div class="invalid-feedback">
+                            Votre nom d'utilisateur est requis.
+                        </div>
+                    </div>
+            </div>
+
+            <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="adress">Adresse</label>
+                <input type="text" class="form-control" id="adress" placeholder="1234 Main Street" required>
+                <div class="invalid-feedback">
+                    Merci d'indiquer ton adresse d'expédition.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="address2">Adresse 2
+                    <span class="text-muted">(Optionnelle)</span>
+                </label>
+                <input type="text" class="form-control" id="adress2" placeholder="Flat No">
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 form-group">
+                    <label for="country">Pays</label>
+                    <select type="text" class="form-control" id="country">
+                        <option value>Choisir...</option>
+                        <option>France</option>
+                        <option>Belgique</option>
+                        <option>Italie</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Veuillez sélectionner un pays valide.
+                    </div>
+                </div>
+
+                <div class="col-md-4 form-group">
+                    <label for="city">Ville</label>
+                    <select type="text" class="form-control" id="city">
+                        <option value>Choisir...</option>
+                        <option>Orléans</option>
+                        <option>Paris</option>
+                        <option>Marseille</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Veuillez choisir une ville valide.
+                    </div>
+                </div>
+                    
+                <div class="col-md-4 form-group">
+                    <label for="postcode">Code postale</label>
+                    <select type="text" class="form-control" id="postcode">
+                        <option value>Choisir...</option>
+                        <option>NW6 2LS</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Code postale obligatoire.
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+            
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="shipping-adress"> 
+                    L'adresse de livraison est la même que mon adresse de facturation
+                <label for="shipping-adress" class="form-check-label"></label>
+            </div>
+
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="same-adress">
+                    Enregistrez ces informations pour la prochaine fois
+                <label for="same-adress" class="form-check-label"></label>					
+                </div>
+
+            <hr>
+
+            <h4 class="mb-4">Paiement</h4>
+            
+            <div class="form-check">
+                <input type="radio" class="form-check-input" id="credit" name="payment-method" checked required>
+                <label for="credit" class="form-check-label">Carte de crédit</label>
+            </div>
+
+           
+            <div class="form-check">
+                <input type="radio" class="form-check-input" id="paypal" name="payment-method"  required>
+                <label for="paypal" class="form-check-label">PayPal</label>
+            </div>
+        
+            <div class="row mt-4">
+                <div class="col-md-6 form-group">
+                        <label for="card-name">Nom sur la carte</label>
+                        <input type="text" class="form-control" id="card-name" placeholder required>
+                        <div class="invalid-feedback">
+                            Le nom sur la carte est obligatoire.
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 form-group">
+                        <label for="card-no">N° carte</label>
+                        <input type="text" class="form-control" id="card-no" placeholder required>
+                        <div class="invalid-feedback">
+                            Le numéro de carte de crédit est requis.
+                        </div>
+                    </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-5 form-group">
+                        <label for="expiration">Date d'expiration</label>
+                        <input type="text" class="form-control" id="card-name" placeholder required>
+                        <div class="invalid-feedback">
+                            Date d'expiration requise
+                        </div>
+                    </div>
+                
+
+                <div class="col-md-5 form-group">
+                        <label for="ccv-no">N° sécutité</label>
+                        <input type="text" class="form-control" id="sec-no" placeholder required>
+                        <div class="invalid-feedback">
+                            Code de sécurité requis
+                        </div>
+                </div>
+            </div>
+
+                <hr class="mb-4">
+            
+                <button class="btn btn-primary bt-md btn-purchase" type="submit" onclick="checkout()">Valider (0) €</button>
+        </form>
+
+    </div>
+    <footer class="main-footer">
+        <div class="container main-footer-container">
+            <h3 class="band-name">Oricono</h3>
+            <ul class="nav footer-nav">
+                <li>
+                    <a href="https://www.youtube.com" target="_blank">
+                        <img src="/Front/Images/YouTube Logo.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.spotify.com" target="_blank">
+                        <img src="/Front/Images/Spotify Logo.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="/Front/Images/Facebook Logo.png">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    
+</body>
+</html>

@@ -123,7 +123,7 @@ function addToCartClicked(event) {
 function gotoDetailPage(event){
     let buttonClicked = event.target;
     const productId = buttonClicked.dataset.id;
-    let url='http://127.0.0.1:5500/Front/pages/product.html?id='+productId;
+    let url='http://127.0.0.1:5500/Front/Pages/product.html?id='+productId;
     location.href=url;
 }
 

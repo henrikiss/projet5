@@ -79,18 +79,37 @@ function loadCartItems() {
 }
 
 function purchaseClicked() {
-    alert('Merci pour votre achat!')
-    let cartItems = document.getElementsByClassName('cart-items')[0]
-    while (cartItems.hasChildNodes()) {
-        cartItems.removeChild(cartItems.firstChild)
+    let cartNumber= localStorage.getItem('cartNumbers');
+
+    if(cartNumber){
+        if(parseInt(cartNumber) > 0){
+            let url='http://127.0.0.1:5500/Front/Pages/checkout.html';
+            location.href=url;
+        } else {
+            alert(`Désolé, Vous n'avez aucun article dans le panier.`);
+            // Retour à la boutique
+            let url='http://127.0.0.1:5500/Front/Pages/store.html';
+            location.href=url;
+        }
+    } else {
+        alert(`Désolé, Vous n'avez aucun article dans le panier.`);
+        // Retour à la boutique
+        let url='http://127.0.0.1:5500/Front/Pages/store.html';
+        location.href=url;
     }
-    updateCartTotal()
+    
 }
+
+// TODO: Créer une function pour factoriser le code ci-dessus
+
+
+
 
 function removeCartItem(event) {
     let buttonClicked = event.target
     if(buttonClicked){
         const productId = buttonClicked.dataset.id;
+      
         updateCart(productId);
     }
     buttonClicked.parentElement.parentElement.remove()
