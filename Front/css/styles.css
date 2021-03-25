@@ -49,8 +49,10 @@ html, body {
     border-bottom: 1px solid rgba(255, 255, 255, .3)
 }
 
+
 .main-nav li {
-    padding: 0 5%;
+    padding: 0;
+    margin: 0;
 }
 
 .nav a:hover {

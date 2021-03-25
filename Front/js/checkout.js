@@ -62,7 +62,7 @@ function checkout(){
 
     // TODO: Construire  l'objet retour et envoyer au serve via la méthode POST
     
-    localStorage.clear();
+    window.localStorage.clear();
     // Retour à la boutique
     let url='http://127.0.0.1:5500/Front/Pages/store.html';
     location.href=url;

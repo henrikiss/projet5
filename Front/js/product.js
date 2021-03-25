@@ -66,11 +66,17 @@ function getParameter(parameterName){
 // Récupération de l'identifiant du produit depuis url
 const teddy_id = getParameter('id');
 
+loadProductById(teddy_id);
 
-if(teddy_id != null){
+function loadProductById(productId){
+    if(productId == null){
+        alert(`Identifiant du produit inconnu.`);
+        return
+    }
+   
     // Appel API
     let request = new XMLHttpRequest()
-    request.open('GET', 'http://127.0.0.1:3000/api/teddies/'+teddy_id);
+    request.open('GET', 'http://127.0.0.1:3000/api/teddies/'+productId);
     request.setRequestHeader('content-type','application/json')
 
     request.send();
@@ -87,14 +93,14 @@ if(teddy_id != null){
             let modif1 = teddyColors.replace(/\"/g,"");
             let modif2 = modif1.replace(/\[/g,"");
             let mycolors = modif2.replace(/\]/g,"");
-           
+            
             //Créer un tableau de couleurs
             let itemCouleurs = mycolors.split(',');
-           
-           
+            
+            
             
             let htmlSegment = `
-                             <section class="section product-detail">
+                                <section class="section product-detail">
                                 <div class="details container-md">
                                 <div class="left">
                                     <div class="main">
@@ -126,7 +132,7 @@ if(teddy_id != null){
                                 </div>
                                 </div>
                             </section>
-                             `;
+                                `;
 
             html += htmlSegment;
 
@@ -136,7 +142,7 @@ if(teddy_id != null){
             // attacher l'evenement click au bouton 'Ajouter au panier'
             document.querySelector('.addCart').addEventListener('click', () => {
 
-               // récupération de la valeur de la couleur sélectionnée.
+                // récupération de la valeur de la couleur sélectionnée.
                 let myColor = "Undefined";
                 let selectedColor = document.getElementById("colorSelect");
             
@@ -166,14 +172,11 @@ if(teddy_id != null){
             //TODO: Afficher un message pour signaler l'erreur
         }
     }
-
-
-} else {
-    //TODO Afficher un message d'erreur
+   
 }
 
-/* GESTION DU PANIER*/
 
+/* GESTION DU PANIER*/
 function cartNumbers(product){
     let nombreProduit = localStorage.getItem('cartNumbers');
     
