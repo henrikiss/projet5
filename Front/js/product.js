@@ -68,6 +68,7 @@ const teddy_id = getParameter('id');
 
 loadProductById(teddy_id);
 
+//Cette fonction pemet de charger les détails d'un produit à partir de son identifiant
 function loadProductById(productId){
     if(productId == null){
         alert(`Identifiant du produit inconnu.`);

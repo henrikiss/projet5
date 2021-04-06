@@ -1,7 +1,7 @@
 if (document.readyState == 'loading') {
-    document.addEventListener('DOMContentLoaded', onPageReady)
+    document.addEventListener('DOMContentLoaded', onPageLoad)
 } else {
-    onPageReady()
+    onPageLoad()
 }
 
 // Fixed Nav
@@ -73,7 +73,8 @@ fetchTeddies().then(teddies => {
             `
         });
     } else {
-        // No teddies found in Database 
+        // No teddies found in Database
+        alert('Aucun teddie trouvé en base.'); 
     }
 
 }).catch(error => {
@@ -83,8 +84,9 @@ fetchTeddies().then(teddies => {
 
 
 
-
-function onPageReady() {
+/* Cette fonction est appellée au chargement de la page */
+/*Elle permet de récupérer le nombre de produit du panier et rafraîchit la valeur du panier affichée*/
+function onPageLoad() {
     let cartNumber= localStorage.getItem('cartNumbers');
 
     if(cartNumber){
@@ -94,7 +96,7 @@ function onPageReady() {
 
 }
 
-
+/*Cette fonction permet de naviguer vers la page détails d'un produit */
 function gotoDetailPage(event){
     let buttonClicked = event.target;
     const productId = buttonClicked.dataset.id;

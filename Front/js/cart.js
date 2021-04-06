@@ -49,10 +49,11 @@ function loadCartItems() {
         mycart.setAttribute('data-count', cartNumber);
     } 
 
+    //Récupération de la liste des produits ajoutés au panier
     let products = localStorage.getItem('productsInCart');
     products = JSON.parse(products);
     
-
+    // Construction du panier
     let cartItems = document.getElementsByClassName('cart-items')[0]
     cartItems.innerHTML = ''
     Object.values(products).map(item =>{
@@ -74,10 +75,11 @@ function loadCartItems() {
       
     });
    
-  
+    //Mise à jour du montant total
     updateCartTotal();
 }
 
+//
 function purchaseClicked() {
     let cartNumber= localStorage.getItem('cartNumbers');
 
