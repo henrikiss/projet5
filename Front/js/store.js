@@ -72,14 +72,14 @@ fetchTeddies().then(teddies => {
             </div>
             `
         });
-    } else {
-        // No teddies found in Database
-        alert('Aucun teddie trouvé en base.'); 
+    } else { 
+        const erroMessage = document.querySelector('.errorMessage');
+        erroMessage.textContent = `Désolé! Aucun produit disponible dans la galerie.`
     }
 
 }).catch(error => {
-
-
+    const erroMessage = document.querySelector('.errorMessage');
+    erroMessage.textContent = `${error}`
 })
 
 

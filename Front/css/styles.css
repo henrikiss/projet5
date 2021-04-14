@@ -455,4 +455,14 @@ i {
     text-transform: uppercase;
     margin-bottom: 2rem;
   }
+
+  .errorMessage{
+    font-size: 1rem;
+    font-weight: 200;
+    color: rgb(245, 32, 32);
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 0.5rem;
+  
+  }
  
